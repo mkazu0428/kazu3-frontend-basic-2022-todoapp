@@ -5,16 +5,16 @@ import COLOR from "../../../variables/color";
 
 const EditButton = (props) => {
   return (
-    <Button onClick={props.onClick}>
+    <EditButtonTag onClick={props.onClick}>
       <Circle />
       <Img src={pencil} />
-    </Button>
+    </EditButtonTag>
   );
 };
 
 export default EditButton;
 
-const Button = styled.button`
+const EditButtonTag = styled.button`
   position: relative;
   width: 20px;
   height: 20px;
