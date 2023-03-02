@@ -14,6 +14,13 @@ const EditButton = (props) => {
 
 export default EditButton;
 
+const Circle = styled.div`
+  width: 20px;
+  height:20px;
+  border-radius: 50%;
+  background: transparent:
+`;
+
 const EditButtonTag = styled.button`
   position: relative;
   width: 20px;
@@ -22,17 +29,10 @@ const EditButtonTag = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  &:hover > div {
+  &:hover ${Circle} {
     opacity: 0.2;
     background: ${COLOR.LIGHT_GRAY};
   }
-`;
-
-const Circle = styled.div`
-  width: 20px;
-  height:20px;
-  border-radius: 50%;
-  background: transparent:
 `;
 
 const Img = styled.img`
