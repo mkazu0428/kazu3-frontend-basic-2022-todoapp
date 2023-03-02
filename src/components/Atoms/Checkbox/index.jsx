@@ -20,6 +20,7 @@ const CheckBoxTag = styled.button`
   border-radius: 2px;
   padding: 0;
   background-color: transparent;
+  cursor: pointer;
   &:hover > img {
     display: flex;
     justify-content: center;
