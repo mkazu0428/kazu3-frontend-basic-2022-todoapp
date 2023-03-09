@@ -10,19 +10,20 @@ const Input = ({ defaultValue = "", onEditComplete }) => {
   useEffect(() => {
     inputRef.current.value = defaultValue;
     inputRef.current.focus();
-    inputRef.current.addEventListener(
-      "focusout",
-      onEditComplete(inputRef.current.value)
-    );
+    inputRef.current.addEventListener("focusout", () => {
+      onEditComplete(inputRef.current.value);
+    });
     inputRef.current.addEventListener("keydown", (e) => {
       if (e.keyCode === 13) {
-        inputRef.current.removeEventListener("focusout", onEditComplete());
+        inputRef.current.removeEventListener("focusout", () => {
+          onEditComplete(inputRef.current.value);
+        });
         onEditComplete(inputRef.current.value);
       }
     });
   }, []);
 
-  return <InputTag ref={inputRef} type="text"></InputTag>;
+  return <InputTag ref={inputRef} type="text" />;
 };
 
 export default Input;
