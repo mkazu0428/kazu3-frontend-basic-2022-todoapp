@@ -35,7 +35,7 @@ const InputTag = styled.input`
   border-radius: 2px;
   background-color: ${COLOR.BLACK};
   ${TEXT.S}
-  color:white;
+  color:${COLOR.LIGHT_GRAY};
   font-family: ${FONTFAMILY.NOTO_SANS};
 
   &:focus {
