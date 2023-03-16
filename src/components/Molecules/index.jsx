@@ -4,6 +4,7 @@ import Checkbox from "../Atoms/Checkbox";
 import EditButton from "../Atoms/EditButton";
 import Input from "../Atoms/Input";
 import COLOR from "../../variables/color";
+import TEXT from "../../variables/texts";
 
 const Task = ({
   onTaskChange,
@@ -22,7 +23,7 @@ const Task = ({
     onTaskChange(value);
   };
 
-  const onEditButtonComplete = () => {
+  const onEditButtonClick = () => {
     isEditingHandler();
   };
 
@@ -37,7 +38,7 @@ const Task = ({
         <StyledNameAndButtonWrapper>
           <StyledTaskName>{taskName}</StyledTaskName>
           <StyledEditButtonWrapper>
-            <EditButton onClick={onEditButtonComplete}></EditButton>
+            <EditButton onClick={onEditButtonClick}></EditButton>
           </StyledEditButtonWrapper>
         </StyledNameAndButtonWrapper>
       )}
@@ -66,6 +67,7 @@ const StyledNameAndButtonWrapper = styled.div`
 const StyledTaskName = styled.div`
   width: 100%;
   color: ${COLOR.LIGHT_GRAY};
+  ${TEXT.S}
 `;
 const StyledEditButtonWrapper = styled.div`
   width: fit-content;
