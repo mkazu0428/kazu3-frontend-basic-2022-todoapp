@@ -2,35 +2,42 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Checkbox from "../Atoms/Checkbox";
 import EditButton from "../Atoms/EditButton";
-//import Input from "../Atoms/Input";
+import Input from "../Atoms/Input";
+import COLOR from "../../variables/color";
 
 const Task = ({
   onTaskChange,
   onTaskComplete,
   taskName = "",
-  defaultsEditing = false,
+  defaultIsEditing = false,
 }) => {
-  const [isEditing, setIsEditing] = useState(defaultsEditing);
-  setIsEditing = (isEditing) => {
-    return !isEditing;
+  const [isEditing, setIsEditing] = useState(defaultIsEditing);
+
+  const isEditingHandler = () => {
+    setIsEditing(!isEditing);
   };
+
+  const onEditComplete = (value) => {
+    isEditingHandler();
+    onTaskChange(value);
+  };
+
+  const onEditButtonComplete = () => {
+    isEditingHandler();
+  };
+
   return (
     <StyledWrapper>
       <StyledCheckboxWrapper>
         <Checkbox onClick={onTaskComplete}></Checkbox>
       </StyledCheckboxWrapper>
       {isEditing ? (
-        <Input
-          onEditComplete={() => {
-            setIsEditing, onTaskChange(value);
-          }}
-        />
-      ) : null}
-      {isEditing ? null : (
+        <Input onEditComplete={onEditComplete} defaultValue={taskName} />
+      ) : (
         <StyledNameAndButtonWrapper>
           <StyledTaskName>{taskName}</StyledTaskName>
           <StyledEditButtonWrapper>
-            <EditButton onClick={setIsEditing}></EditButton>
+            <EditButton onClick={onEditButtonComplete}></EditButton>
           </StyledEditButtonWrapper>
         </StyledNameAndButtonWrapper>
       )}
@@ -44,6 +51,7 @@ const StyledWrapper = styled.div`
   width: 256px;
   height: 24px;
   padding: 2px 6px;
+  display: flex;
 `;
 const StyledCheckboxWrapper = styled.div`
   width: fit-content;
@@ -57,6 +65,7 @@ const StyledNameAndButtonWrapper = styled.div`
 `;
 const StyledTaskName = styled.div`
   width: 100%;
+  color: ${COLOR.LIGHT_GRAY};
 `;
 const StyledEditButtonWrapper = styled.div`
   width: fit-content;
