@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import COLOR from "../../../variables/color";
 import AddTaskButton from "../../Atoms/AddTaskButton";
 import Task from "../../Molecules/Task";
+import COLOR from "../../../variables/color";
+import BREAKPOINT from "../../../variables/breakpoint";
 
 const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
@@ -50,8 +51,11 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: ${COLOR.LIGHT_BLACK};
+  background-color: ${COLOR.DEEP_BLUE_GRAY};
   border-radius: 4px;
+  @media screen and (min-width: ${BREAKPOINT.MEDIUM}) {
+    width: 500px;
+  }
 `;
 const StyledTaskList = styled.div`
   display: flex;
