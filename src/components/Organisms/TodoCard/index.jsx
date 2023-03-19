@@ -50,6 +50,7 @@ export default TodoCard;
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding: 20px;
   background-color: ${COLOR.LIGHT_BLACK};
   border-radius: 4px;
