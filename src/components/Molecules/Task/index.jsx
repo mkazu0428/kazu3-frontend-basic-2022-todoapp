@@ -45,10 +45,10 @@ const Task = ({
 export default Task;
 
 const StyledWrapper = styled.div`
-  width: 256px;
+  display: flex;
   height: 24px;
   padding: 2px 6px;
-  display: flex;
+  margin-top: 10px;
 `;
 const StyledCheckboxWrapper = styled.div`
   width: fit-content;
