@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Title from "../../Atoms/Title";
 import TodoCard from "../../Organisms/TodoCard";
 import COLOR from "../../../variables/color";
+import BREAKPOINT from "../../../variables/breakpoint";
 
 const MainPage = () => {
   return (
@@ -19,9 +20,13 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  margin: -16px;
   padding: 20px;
   gap: 20px;
   background-color: ${COLOR.DEEP_BLUE_GRAY};
+  @media screen and (min-width: ${BREAKPOINT.MEDIUM}) {
+    padding-top: 60px;
+  }
 `;
