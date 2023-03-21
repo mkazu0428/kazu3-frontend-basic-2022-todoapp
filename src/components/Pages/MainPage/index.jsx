@@ -22,7 +22,6 @@ const StyledWrapper = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  margin: -16px;
   padding: 20px;
   gap: 20px;
   background-color: ${COLOR.DEEP_BLUE_GRAY};
