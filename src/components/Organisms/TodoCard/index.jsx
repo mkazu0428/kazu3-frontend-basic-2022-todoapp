@@ -30,6 +30,7 @@ const TodoCard = () => {
   const onTaskNameChange = (value, index) => {
     const newTaskList = [...taskList];
     newTaskList[index].name = value;
+    newTaskList[index].initializing = false;
     if (value === "") {
       newTaskList.splice(index, 1);
     }
