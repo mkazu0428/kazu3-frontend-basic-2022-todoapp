@@ -3,10 +3,8 @@ import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
 
-const Alert = (props) => {
-  return (
-    <StyledWrapper isActive={props.isActive}>{props.errorText}</StyledWrapper>
-  );
+const Alert = ({ isActive, errorText }) => {
+  return <StyledWrapper isActive={isActive}>{errorText}</StyledWrapper>;
 };
 
 export default Alert;
@@ -17,7 +15,10 @@ const StyledWrapper = styled.div`
   padding: 10px 20px;
   border-radius: 4px;
   background-color: ${COLOR.RED};
-  opacity: ${(props) => (props.isActive ? "1" : "0")};
+  transition: all 1s;
+  opacity: ${({ isActive }) => (isActive ? "1" : "0")};
+  transform: ${({ isActive }) =>
+    isActive ? "translateY(30px)" : "translateY(-30px)"};
   ${TEXT.S}
   color: ${COLOR.WHITE};
 `;
