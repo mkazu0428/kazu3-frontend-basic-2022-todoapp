@@ -23,7 +23,6 @@ Default.decorators = [
   (Story) => (
     <div>
       <AlertHandlerProvider>
-        y
         <AlertManager />
         <Story />
       </AlertHandlerProvider>
