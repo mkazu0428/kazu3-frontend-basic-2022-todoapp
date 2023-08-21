@@ -8,8 +8,14 @@ import BREAKPOINT from "../../../variables/breakpoint";
 const MainPage = () => {
   return (
     <StyledWrapper>
-      <Title />
-      <TodoCard />
+      <Box>
+        <Title title="deloitt" />
+        <TodoCard />
+      </Box>
+      <Box>
+        <Title title="pwc" />
+        <TodoCard />
+      </Box>
     </StyledWrapper>
   );
 };
