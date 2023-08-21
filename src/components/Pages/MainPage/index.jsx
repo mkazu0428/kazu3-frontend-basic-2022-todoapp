@@ -4,13 +4,14 @@ import Title from "../../Atoms/Title";
 import TodoCard from "../../Organisms/TodoCard";
 import COLOR from "../../../variables/color";
 import BREAKPOINT from "../../../variables/breakpoint";
+import LinkButton from "../../Atoms/LinkButton";
 
 const MainPage = () => {
   return (
     <StyledWrapper>
       <Box>
         <Title title="deloitt" />
-        <TodoCard />
+        <LinkButton title="リンク" href="../SubPage/page1" />
       </Box>
       <Box>
         <Title title="pwc" />
