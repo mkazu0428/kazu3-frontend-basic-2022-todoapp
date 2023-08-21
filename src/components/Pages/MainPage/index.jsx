@@ -25,7 +25,7 @@ export default MainPage;
 const StyledWrapper = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   height: 100vh;
@@ -35,4 +35,11 @@ const StyledWrapper = styled.div`
   @media screen and (min-width: ${BREAKPOINT.MEDIUM}) {
     padding-top: 60px;
   }
+`;
+
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  height: 80%;
 `;
